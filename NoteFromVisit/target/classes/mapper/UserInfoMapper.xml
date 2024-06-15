@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sengang.mapper.UserInfoMapper">
+
+    <resultMap id="BaseResultMap" type="com.sengang.entity.UserInfo">
+            <id property="userId" column="user_id" jdbcType="BIGINT"/>
+            <result property="city" column="city" jdbcType="VARCHAR"/>
+            <result property="introduce" column="introduce" jdbcType="VARCHAR"/>
+            <result property="fans" column="fans" jdbcType="INTEGER"/>
+            <result property="followee" column="followee" jdbcType="INTEGER"/>
+            <result property="gender" column="gender" jdbcType="TINYINT"/>
+            <result property="birthday" column="birthday" jdbcType="DATE"/>
+            <result property="credits" column="credits" jdbcType="INTEGER"/>
+            <result property="level" column="level" jdbcType="TINYINT"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        user_id,city,introduce,
+        fans,followee,gender,
+        birthday,credits,level,
+        create_time,update_time
+    </sql>
+</mapper>

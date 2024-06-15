@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sengang.mapper.ShopMapper">
+
+    <resultMap id="BaseResultMap" type="com.sengang.entity.Shop">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="typeId" column="type_id" jdbcType="BIGINT"/>
+            <result property="images" column="images" jdbcType="VARCHAR"/>
+            <result property="area" column="area" jdbcType="VARCHAR"/>
+            <result property="address" column="address" jdbcType="VARCHAR"/>
+            <result property="x" column="x" jdbcType="DOUBLE"/>
+            <result property="y" column="y" jdbcType="DOUBLE"/>
+            <result property="avgPrice" column="avg_price" jdbcType="BIGINT"/>
+            <result property="sold" column="sold" jdbcType="INTEGER"/>
+            <result property="comments" column="comments" jdbcType="INTEGER"/>
+            <result property="score" column="score" jdbcType="INTEGER"/>
+            <result property="openHours" column="open_hours" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,name,type_id,
+        images,area,address,
+        x,y,avg_price,
+        sold,comments,score,
+        open_hours,create_time,update_time
+    </sql>
+</mapper>

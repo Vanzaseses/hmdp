@@ -1,0 +1,38 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: hmdp
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://${hm.db.host}:3306/hmdp?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: ${hm.db.pw}
+  redis:
+    host: 192.168.112.128
+    port: 6379
+    password: 123456
+    lettuce:
+      pool:
+        max-active: 10
+        max-idle: 10
+        min-idle: 1
+        time-between-eviction-runs: 10s
+  jackson:
+    default-property-inclusion: non_null # JSON处理时忽略非空字段
+  rabbitmq:
+    host: ${hm.mq.host:192.168.112.128} # 主机名
+    port: ${hm.mq.port:5672} # 端口
+    virtual-host: ${hm.mq.vhost:/hmdp} # 虚拟主机
+    username: ${hm.mq.un:hmdp} # 用户名
+    password: ${hm.mq.pw:123} # 密码
+mybatis-plus:
+  type-aliases-package: com.sengang.entity # 别名扫描包
+logging:
+  level:
+    com.sengang: debug
+#jwt配置
+jwt:
+  token:
+    tokenExpiration: 15 #有效时间,单位分钟
+    tokenSignKey: dongsen  #当前程序签名秘钥 自定义
