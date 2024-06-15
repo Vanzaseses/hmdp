@@ -1,5 +1,6 @@
 # hmdp
  黑马点评项目完整代码，包含前后端
+ 
  技术架构： Redis + Spring Boot + MySQL + RabbitMQ + Mybatis-plus + Hutool + JWT 
 	实现了短信验证码登录、查找最近店铺、优惠券秒杀、关注推送、发表点评的完整业务流程
 	使用redis+JWT解决了在集群模式下的Session共享问题，使用拦截器实现用户的登录校验和Token刷新
